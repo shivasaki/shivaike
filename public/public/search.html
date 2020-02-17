@@ -1,0 +1,55 @@
+<script>
+    //import algoliasearch from "algoliasearch";
+    var client = algoliasearch('J407D7KOSC', '2596cc4eaa50db0e23a0a2f8b44d4bb0');
+    var index = client.initIndex('subjects');
+    var result_subjects = []
+    $(function () {
+        const search_submit = document.querySelector("#search-submit");
+        const search_word = document.querySelector("#search-word");
+        search_submit.addEventListener("click", function () {
+            query = search_word.value;
+            // Perform an Algolia search:
+            // https://www.algolia.com/doc/api-reference/api-methods/search/
+            index
+                .search({
+                    query
+                })
+                .then(function (responses) {
+                    // Response from Algolia:
+                    // https://www.algolia.com/doc/api-reference/api-methods/search/#response-format
+                    result_subjects = responses.hits;
+                    console.log(result_subjects)
+                    $("#subjects").html(_.template(search_result, result_subjects));
+                    $('.a_el').on("click", (function () {
+                        var this_id = $(this).attr("data-doc-id");
+                        location.href = '/detail.html' + '#' + this_id
+                    }))
+                })
+                .catch((err) => {
+                    console.log('Error getting documents', err);
+                });
+        });
+    });
+    var search_result = [
+        '<div class="grid-g">',
+        "<% _.each(result_subjects, function(val, i) { %>",
+        '<a class="a_el" data-doc-id="',
+        '<%- val.objectID %>',
+        '">',
+        '<div id="comp">',
+        '<h4>科目名：<span class="bold"><%- val.name %></span></h4>',
+        '<h4>教員名：<span class="bold"><%- val.professor %></span></h4>',
+        '<h4>専門科目/一般教養：<%- val.type %></h4>',
+        "<h4>楽単度：<%- val.rating %></h4>",
+        /*'<div class="star-rating">',
+        '<div class="star-rating-front">★★★★★</div>',
+        '<div class="star-rating-back">★★★★★</div>',
+        "</div>",*/
+        "</div>",
+        "</a>",
+        "<% }) %>",
+        "</div>",
+    ].join("");
+</script>
+<input id="search-word" class="search" type="googleapis" style="margin:auto;">
+<button id="search-submit" class="search-button" style="margin:auto;" value="検索"></button>

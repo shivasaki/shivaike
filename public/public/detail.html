@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html prefix="og: http://ogp.me/ns# fb: http://ogp.me/ns/fb# website: http://ogp.me/ns/websaite#">
+
+<head>
+  <meta charset=utf8>
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <title>Shivaike</title>
+  <meta property="og:image" content="image/shivaike.jpg">
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+    integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+    crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+    integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+    crossorigin="anonymous"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+  <script src="https://rawgit.com/kimmobrunfeldt/progressbar.js/master/dist/progressbar.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.lazyload/1.9.1/jquery.lazyload.min.js"></script>
+  <link rel="stylesheet" type="text/css" href="css/prottype.css">
+  <link rel="stylesheet" type="text/css" href="css/style_for_modal.css">
+  <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/lodash.js/0.10.0/lodash.min.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/5.8.4/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/5.8.4/firebase-auth.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/5.8.4/firebase-database.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/5.8.4/firebase-firestore.js"></script>
+  <script src="/__/firebase/init.js"></script>
+  <script src="https://cdn.jsdelivr.net/algoliasearch/3/algoliasearch.min.js"></script>
+  <script src="/detail.js"></script>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-137477008-1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'UA-137477008-1');
+  </script>
+  <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+  <script>
+    (adsbygoogle = window.adsbygoogle || []).push({
+      google_ad_client: "ca-pub-7036359449378059",
+      enable_page_level_ads: true
+    });
+  </script>
+  <meta property="og:url" content=" https://shivaike.com/" />
+  <meta property="og:title" content="Shivaike" />
+  <meta property="og:description" content="あなたの落胆を楽単にするサービス" />
+  <meta property="og:site_name" content="Shivaike" />
+  <meta property="og:image" content="image/shivaike" />
+</head>
+
+<body>
+  <header>
+    <h3><a href="index.html">Shivaike</a></h3>
+    </a>
+  </header>
+  <div class="content">
+    <section style="margin:auto; text-align:center; padding:50px 0;">
+    </section>
+    <!-- modalボタン -->
+    <button style="text-align: center; display: block; margin: auto; margin-bottom: 30px;"><a href="#modal01"
+        id="modal-button" class="modalOpen" style="background:none; border:none;">レビューを投稿</a></button>
+    <!-- modal↓ -->
+    <div class="modal" id="modal01">
+      <div class="overLay modalClose"></div>
+      <div class="inner">
+        <div class="content post">
+          <div class="posts">
+            <h4>出席</h4>
+            <select id="atnd">
+              <option value="あり">あり</option>
+              <option value="なし">なし
+              </option>
+            </select>
+          </div>
+          <div class="posts">
+            <h4>教科書</h4>
+            <select id="txbk">
+              <option value="必要">必要</option>
+              <option value="必要なし">必要なし</option>
+            </select>
+          </div>
+          <div class="posts">
+            <h4>テスト</h4>
+            <div class="inline">
+              <p>中間</p>
+              <select id="midt">
+                <option value="なし">なし</option>
+                <option value="あり">あり</option>
+                <option value="アンケートのみ">アンケートのみ</option>
+              </select>
+            </div>
+            <div class="inline">
+              <p>期末</p>
+              <select id="fint">
+                <option value="なし">なし</option>
+                <option value="あり">あり</option>
+                <option value="アンケートのみ">アンケートのみ</option>
+              </select>
+            </div>
+            <div class="inline">
+              <p>持ち込み</p>
+              <select id="eqpm">
+                <option value="あり">あり</option>
+                <option value="なし">なし</option>
+              </select>
+            </div>
+          </div>
+          <div class="posts">
+            <h4>楽単度</h4>
+            <input type="radio" name="rating" value="1">1
+            <input type="radio" name="rating" value="2">2
+            <input type="radio" name="rating" value="3">3
+            <input type="radio" name="rating" value="4">4
+            <input type="radio" name="rating" value="5">5
+          </div>
+          <div>
+            <h4>コメント</h4>
+            <textarea id="cmnt" class="comment"></textarea>
+          </div>
+          <button id="form-submit" class="modalClose"
+            style="height:30px; width:100px;  top:300px; left:300px;">submit</button>
+        </div>
+      </div>
+    </div>
+    <!-- modal↑ -->
+    <div id="detail"></div>
+    <section id="reviews" class="details">
+    </section>
+  </div>
+</body>
+
+</script>
+
+</html>

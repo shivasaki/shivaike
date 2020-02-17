@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html prefix="og: http://ogp.me/ns# fb: http://ogp.me/ns/fb# website: http://ogp.me/ns/websaite#">
+
+<head>
+  <meta charset=utf8>
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <title>Shivaike</title>
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+    integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+    crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+    integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+    crossorigin="anonymous"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+  <script src="https://rawgit.com/kimmobrunfeldt/progressbar.js/master/dist/progressbar.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.lazyload/1.9.1/jquery.lazyload.min.js"></script>
+  <link rel="stylesheet" type="text/css" href="css/prottype.css">
+  <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/lodash.js/0.10.0/lodash.min.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/5.8.4/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/5.8.4/firebase-auth.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/5.8.4/firebase-database.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/5.8.4/firebase-firestore.js"></script>
+  <script src="/__/firebase/init.js"></script>
+  <script src="https://cdn.jsdelivr.net/algoliasearch/3/algoliasearch.min.js"></script>
+  <script src="/index.js"></script>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-137477008-1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'UA-137477008-1');
+  </script>
+  <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+  <script>
+    (adsbygoogle = window.adsbygoogle || []).push({
+      google_ad_client: "ca-pub-7036359449378059",
+      enable_page_level_ads: true
+    });
+  </script>
+  <meta property="og:url" content=" https://shivaike.com/" />
+  <meta property="og:title" content="Shivaike" />
+  <meta property="og:description" content="あなたの落胆を楽単にするサービス" />
+  <meta property="og:site_name" content="Shivaike" />
+  <meta property="og:image" content="image/shivaike" />
+</head>
+
+<body>
+  <header>
+    <h3><a href="index.html" style="color:white; text-decoration:none;">Shivaike</a></h3>
+  </header>
+  <div class="content" id="main">
+    <section id="title-text" style="text-align:center; padding-top:50px;">
+      <h1 style="font-size:2rem;">あなたの落胆を楽単に</h1>
+      <div id="search-box" class="search-field"></div>
+      <script>
+        $('#search-box').load('search.html');
+      </script>
+    </section>
+    <div id="subjects"></div>
+    <footer>
+      <h1>watnow</h1>
+    </footer>
+  </div>
+</body>
+
+</html>

@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset=utf8>
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <title>Prottype</title>
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+    integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+    crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+    integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+    crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+    integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+    crossorigin="anonymous"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+  <script src="https://rawgit.com/kimmobrunfeldt/progressbar.js/master/dist/progressbar.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.lazyload/1.9.1/jquery.lazyload.min.js"></script>
+  <link rel="stylesheet" type="text/css" href="css/prottype.css">
+  <script src="https://www.gstatic.com/firebasejs/5.9.1/firebase.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/5.8.4/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/5.8.4/firebase-auth.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/5.8.4/firebase-database.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/5.8.4/firebase-firestore.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/5.8.4/firebase-messaging.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/5.8.4/firebase-functions.js"></script>
+  <script src="/__/firebase/init.js"></script>
+</head>
+
+<body>
+  <style>
+    .comp {
+      max-width: 600px;
+      width: 80%;
+      height: auto;
+      margin: auto;
+      background: white;
+      border-bottom: 1px solid rgba(150, 150, 150, 0.5);
+      padding-bottom: 20px;
+      margin-bottom: 20px;
+      cursor: pointer;
+    }
+
+    .bold {
+      font-weight: bold;
+    }
+
+    .star-rating {
+      position: relative;
+      width: 5em;
+      height: auto;
+      font-size: 25px;
+    }
+
+    .star-rating-front {
+      width: 100%;
+      position: absolute;
+      top: 0;
+      left: 0;
+      overflow: hidden;
+      color: #ffcc33;
+    }
+
+    .star-rating-back {
+      color: #ccc;
+    }
+  </style>
+  <a href="index.html">公開ページトップ</a>
+  <p>科目名</p><input type="text" id="subj">
+  <p>教授</p><input type="text" id="prof">
+  <p>科目種類</p><input type="text" id="type">
+  <p>レート</p><input type="number" id="rate">
+  <button style="height:100px; width:100px; position:absolute; top:300px; left:300px;"
+    id="saveSubjectButton">submit</button>
+  <script src="db.js"></script>
+
+</body>
+
+</html>
