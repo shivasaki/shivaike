@@ -1,12 +1,4 @@
 
-var config = {
-    apiKey: "AIzaSyBfPXiOjJs3AtXHQwTshNqSwmQU7Ibv2Rw",
-    authDomain: "r-t-b-4e91f.firebaseapp.com",
-    databaseURL: "https://r-t-b-4e91f.firebaseio.com",
-    projectId: "r-t-b-4e91f",
-    storageBucket: "r-t-b-4e91f.appspot.com",
-    messagingSenderId: "534319705104"
-};
 var firestore = firebase.firestore();
 
 const docRef = firestore.collection("subjects");
